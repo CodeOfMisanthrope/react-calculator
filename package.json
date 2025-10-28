@@ -1,0 +1,28 @@
+{
+  "name": "03_03_react-calculator",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react-swc": "^4.1.0",
+    "typescript": "~5.9.3",
+    "vite": "npm:rolldown-vite@7.1.14"
+  },
+  "resolutions": {
+    "vite": "npm:rolldown-vite@7.1.14"
+  },
+  "packageManager": "yarn@4.10.3"
+}

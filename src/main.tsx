@@ -1,7 +1,7 @@
-import { StrictMode } from 'react';
+import {lazy, StrictMode} from 'react';
 import { createRoot } from 'react-dom/client';
 import '~assets/styles/main.css';
-import App from '~/App.tsx';
+const App = lazy(() => import('~/App.tsx'));
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

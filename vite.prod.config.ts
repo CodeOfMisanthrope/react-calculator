@@ -9,8 +9,16 @@ const dirname = import.meta.dirname;
 export default defineConfig({
     ...viteBaseConfig,
 
-    server: {
-        port: 5173,
-        hmr: true,
-    },
+    mode: "production",
+
+    build: {
+        outDir: path.resolve(__dirname, "dist"),
+        assetsDir: path.resolve(__dirname, "dist", "assets"),
+        cssCodeSplit: true,
+        target: "es2020",
+        cssMinify: "lightningcss",
+        sourcemap: true,
+        manifest: true,
+        minify: "oxc"
+    }
 });

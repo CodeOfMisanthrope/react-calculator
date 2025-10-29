@@ -28,5 +28,18 @@ body {
 }
 
 .calc-btn {
+    background-color: #fae8ff;
     border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.calc-btn:hover {
+    background-color: #f3d4ff;
+}
+
+.calc-btn:active {
+    background-color: #e9c2fc;
 }

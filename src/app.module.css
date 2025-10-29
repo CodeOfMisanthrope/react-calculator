@@ -30,22 +30,18 @@
 .calc__list-operation {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin-bottom: 10px;
+    gap: 10px;
 }
 
 .calc__item-operation {
-    max-width: 120px;
-    width: 100%;
-}
-
-.calc__item-operation:not(:last-child) {
-    margin-right: 3px;
+    flex: 1;
 }
 
 .calc__btn-operation {
     width: 100%;
-    height: 35px;
+    height: 45px;
+    font-size: 25px;
 }
 
 .calc__list-num {

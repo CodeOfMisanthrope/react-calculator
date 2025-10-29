@@ -96,39 +96,4 @@ export function evalExpr(expr: string[]) {
     }
 
     return leftNum;
-
-    // let result = 0;
-    // let leftNum: string[] = [];
-    // let curOp: string = '';
-    // // let rightNum = [];
-    //
-    // for (const el of parsedExpr) {
-    //     console.log(el);
-    //     // console.log(reNum.test(el));
-    //     const isNum = reNum.test(el);
-    //     const isOp = reOp.test(el);
-    //     // console.log(isNum, isOp);
-    //     if (!isNum && !isOp) {
-    //         return NaN;
-    //     }
-    //
-    //     if (isNum) {
-    //         const num = el;
-    //         if (curOp !== '') {
-    //             // switch (isOp) {
-    //             //     case '+':
-    //             //         let rightNum = []
-    //             // }
-    //         } else {
-    //             leftNum = [...leftNum, num];
-    //         }
-    //         continue;
-    //     }
-    //
-    //     if (isOp) {
-    //
-    //     }
-    // }
-    //
-    // return result;
 }

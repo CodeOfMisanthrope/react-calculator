@@ -8,10 +8,17 @@ const dirname = import.meta.dirname;
 export default defineConfig({
   plugins: [react()],
 
+  server: {
+    port: 5173,
+    hmr: true,
+  },
+
   resolve: {
     alias: {
       '~': path.resolve(dirname, 'src'),
       '~assets': path.resolve(dirname, 'assets'),
-    }
+    },
+
+    extensions: ['.tsx', '.ts', '.css'],
   }
 })

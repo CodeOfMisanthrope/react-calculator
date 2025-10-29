@@ -1,32 +1,42 @@
 import {type MouseEvent} from "react";
 import {useState} from 'react';
 import style from '~/app.module.css';
+import {evalExpr} from "~utils/calc.ts";
+
+type MouseEventBtn = MouseEvent<HTMLButtonElement>;
 
 function App() {
     const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // console.log(evalExpr(['1', '2', '3', '+', '6']));
+    // console.log(evalExpr(['1', '2', '3', '+', '6', '-']));
+    console.log(evalExpr(['-', '1', '2', '3', '+', '6', '-']));
+    const [expression, setExpression] = useState<string[]>([]);
 
-    const [expression, setExpression] = useState([]);
-
-    const onClickNum = (event: MouseEvent<HTMLButtonElement>) => {
+    const onClickNum = (event: MouseEventBtn) => {
         event.preventDefault();
-        const num = Number(event.currentTarget.dataset.num);
-        console.log(num);
+        const num = String(event.currentTarget.dataset.num);
+        setExpression([...expression, num]);
     };
 
-    const onClickSum = (event: MouseEvent<HTMLButtonElement>) => {
+    const onClickSum = (event: MouseEventBtn) => {
         event.preventDefault();
+        setExpression([...expression, '+']);
     }
 
-    const onClickDiff = (event: MouseEvent<HTMLButtonElement>) => {
+    const onClickDiff = (event: MouseEventBtn) => {
         event.preventDefault();
+        setExpression([...expression, '-']);
     };
 
-    const onClickResult = (event: MouseEvent<HTMLButtonElement>) => {
+    const onClickResult = (event: MouseEventBtn) => {
         event.preventDefault();
+        const result = evalExpr(expression);
+        setExpression([...String(result)]);
     };
 
-    const onClickClear = (event: MouseEvent<HTMLButtonElement>) => {
+    const onClickClear = (event: MouseEventBtn) => {
         event.preventDefault();
+        setExpression([]);
     };
 
     const operations = [
@@ -42,10 +52,10 @@ function App() {
             <form className={style['calc__form']} action="">
                 {/*<label htmlFor="input-number" className={style['calc__label']}>Введите выражение</label>*/}
                 {/*<input id="input-number" className={style['calc__input-number'] + ' ' + 'calc-input'} type="number"/>*/}
-                <div className={style['calc__display']}></div>
+                <div className={style['calc__display']}>{expression.join('')}</div>
                 <div className={style['calc__list-operation']}>
                     {operations.map(({op, handler}) => (
-                        <div className={style['calc__item-operation']}>
+                        <div className={style['calc__item-operation']} key={op}>
                             <button
                                 className={style['calc__btn-operation'] + ' ' + 'calc-btn'}
                                 onClick={handler}

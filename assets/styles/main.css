@@ -1,5 +1,10 @@
 @import "normalize.css";
 @import "variables.css";
+@import "fonts.css";
+
+body {
+    font-family: Roboto, sans-serif;
+}
 
 #root {
     max-width: 1280px;
@@ -9,7 +14,9 @@
 }
 
 .calc-input {
-
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 20px;
 }
 
 .calc-input:focus {
@@ -18,4 +25,8 @@
 
 .calc-input:active {
     outline: none;
+}
+
+.calc-btn {
+    border: none;
 }

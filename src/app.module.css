@@ -1,17 +1,17 @@
 .calc__title {
-
+    text-align: center;
 }
 
 .calc__form {
     display: flex;
-    flex-direction: row;
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*background-color: aqua;*/
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .calc__label {
     display: block;
+    width: 100%;
 }
 
 .calc__input-number {
@@ -19,14 +19,29 @@
 }
 
 .calc__list {
-    width: 300px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .calc__item {
-
+    flex: 0 0 calc(33.333% - 7px);
 }
 
-.calc__btn {
+.calc__btn-num {
+    width: 100%;
+    height: 35px;
+    background-color: #fae8ff;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
 
+.calc__btn-num:hover {
+    background-color: #f3d4ff;
+}
+
+.calc__btn-num:active {
+    background-color: #e9c2fc;
 }

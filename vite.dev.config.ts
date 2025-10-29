@@ -9,6 +9,8 @@ const dirname = import.meta.dirname;
 export default defineConfig({
   ...viteBaseConfig,
 
+  mode: "development",
+
   server: {
     port: 5173,
     hmr: true,

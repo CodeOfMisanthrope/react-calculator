@@ -8,8 +8,9 @@ function App() {
         <>
             <h1 className={style['calc__title']}>Калькулятор</h1>
             <form className={style['calc__form']} action="">
-                <label htmlFor="input-number" className={style['calc__label']}>Введите выражение</label>
-                <input id="input-number" className={style['calc__input-number'] + ' ' + 'calc-input'} type="number"/>
+                {/*<label htmlFor="input-number" className={style['calc__label']}>Введите выражение</label>*/}
+                {/*<input id="input-number" className={style['calc__input-number'] + ' ' + 'calc-input'} type="number"/>*/}
+                <div className={style['calc__display']}></div>
                 <div className={style['calc__list']}>
                     {nums.map((num) =>
                         <div className={style['calc__item']} key={num}>
